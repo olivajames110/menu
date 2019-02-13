@@ -1,24 +1,14 @@
 import React, { Component } from 'react';
 
-// import './button.css';
-
-
-
 class MenuItemModal extends Component {
-    // constructor(props) {
-    //     super(props);
-    //     this.state = {
-    //       title: this.props.title,
-    //       desc: this.props.desc,
-    //       price: this.props.price
-    //     }
-    //   }
+
 
   render() {
+      const isOpen = this.props.isOpen ? 'initial' : "none"
     return (    
-        <div className="item-modal-bg">
+        <div style={{display: isOpen} } className="item-modal-bg">
          <div className="item-modal">
-            <div className="close-button"><i className="fas fa-times"></i>
+            <div onClick={() => this.props.onModalClose()} className="close-button"><i className="fas fa-times"></i>
             </div>
             <div className="modal-header-cont">
                 <div className="modal-header">{this.props.title}</div>
@@ -32,7 +22,6 @@ class MenuItemModal extends Component {
                             <input type="select" className="modal-question-item-answer" placeholder="Select Item" /> 
                             <span className="input-arrow"><i className="fas fa-arrow-right"></i></span>
                         </div>
-  
                     </div>   
                 </div>
                 <div className="modal-modifier-col">
@@ -45,7 +34,6 @@ class MenuItemModal extends Component {
             </div>
             </div>
           </div>
-     
         </div>
     );
   }
