@@ -1,0 +1,329 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+@import url('https://fonts.googleapis.com/css?family=Montserrat|Sarabun|Fredoka+One');
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans:400,700');
+/* font-family: 'Montserrat', sans-serif; */
+/* font-family: 'Sarabun', sans-serif; */
+/* font-family: 'Noto Sans', sans-serif; */
+/* font-family: 'Fredoka One', cursive; */
+/* background: linear-gradient(45deg, #4b68d4, #f1afa1); */
+
+header{
+    background: white;  
+    justify-content: space-between;
+    color: #333;
+    padding: 28px;
+    box-shadow: 0px -1px 6px 2px #0000001c;
+    border-bottom: 1px solid #ccccc5;
+}
+
+
+body {
+    background: #fafafa;
+}
+
+.logo {
+    font-family: 'Fredoka One', cursive;
+}
+
+.display-flex-row {
+    display: flex;
+    flex-direction: row;
+}
+
+.menu-body {
+    justify-content: center;
+}
+
+.link-item {
+    margin: 0 13px;
+    cursor: pointer;
+    transition: 100ms;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.link-item:hover {
+    color: rgba(51, 51, 51, 0.753);
+}
+
+
+.menu-header {
+    background: url('https://c.pxhere.com/photos/96/03/meat_bbq_food_barbecue_beef_cooking_eating_fire-807571.jpg!d');
+    padding:  200px 0;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    z-index: -10;
+}
+
+.menu-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #0000001a;
+    z-index: -1;
+   
+}
+
+.menu-header-text {
+    font-family: 'Fredoka One', cursive;
+    text-align: center;
+    font-size: 38px;
+    color: white;
+    z-index: 1;
+}
+
+.menu-container {
+    justify-content: space-evenly;
+    padding: 30px 0;
+    flex-wrap: wrap;
+    max-width: 1500px;
+}
+
+.menu-item-wrapper {
+    background-color: #f5f5f5;
+    border-radius: 10px;
+    max-width: 315px;
+    margin: 30px 20px;
+    border: 1px solid #e6e0e0;
+    border-radius: 5px;
+    box-shadow: 2px 1px 3px 0px #00000014;
+    transition: 245ms transform;
+    cursor: pointer;
+}
+
+.menu-item-wrapper:hover {
+    transform: scale(1.02)
+}
+
+.menu-item-list {
+    font-family: 'Noto Sans', sans-serif;
+    padding: 10px 15px;
+}
+
+.menu-item-title {
+    font-size: 23px;
+    padding: 10px 0;
+}
+
+.menu-item-price {
+    font-size: 14px;
+    color: black;
+    padding: 6px 0;
+}
+
+
+
+/* -----MODAL----- */
+
+.item-modal-bg {
+    display: none;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #0000001a;
+    position: fixed;
+}
+
+.item-modal {
+    background: white;
+    width: 50%;
+    overflow: hidden;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    border-radius: 8px;
+    position: fixed;
+    transition: 1s;
+    font-family: 'Montserrat', sans-serif;
+    animation: fadeIn 420ms;
+}
+
+.item-modal::before {
+    content: 'X';
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: white;
+    font-size: 20px;
+}
+
+.modal-header-cont  , .modal-question-col {
+    padding: 14px;
+}
+
+
+.modal-question-col , .modal-modifier-col {
+    padding: 20px 0;
+}
+
+/* Modal Header */
+
+.modal-header-cont {
+    background-color: #102f73;
+    color: white;
+}
+
+.modal-header , .modal-header-desc {
+    padding: 8px 0;
+    
+}
+
+.modal-header {
+    font-size: 28px;
+   
+}
+.modal-header-desc {
+    font-size: 18px;
+}
+
+
+/* -Modal Body */
+.modal-body {
+    display: grid;
+    grid-template-columns: 1fr 155px;
+    height: 100%;
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 18px;
+    min-height: 400px;
+}
+
+/* --Modal Body -> question column */
+.modal-question-col {
+    /* height: 100%; */
+    padding-left: 14px;
+    padding-right: 14px;
+}
+
+.modal-question-item {
+    display: flex;
+    justify-content: space-between;
+    margin: 15px 0;
+    margin: 30px 10px;
+}
+
+.modal-question-item-question {
+    padding: 8px 0;
+}
+
+input.modal-question-item-answer {
+    background: white;
+    border: none;
+    border-bottom: 2px solid rgba(255, 0, 0, 0.401);
+    background: rgba(255, 0, 0, 0.099);
+    padding: 8px;
+    outline: none;
+    transition: 200ms;
+    border-radius: 2px;
+}
+input.modal-question-item-answer:hover , input.modal-question-item-answer:focus{
+    /* background: rgba(255, 0, 0, 0.088); */
+    border-bottom: 3px solid rgba(255, 0, 0, 0.074);
+    animation: arrowMove;
+}
+
+ 
+
+.input-container {
+    position: relative;
+}
+
+.input-arrow {
+    position: absolute;
+    right: 9px;
+    top: 9px;
+    color: #949494;
+    font-size: 15px;
+}
+
+.input-arrow::before {
+    content: '';
+    width: 0;
+    height: 0;
+    border-top: 30px solid #d4d3d300;
+    border-bottom: 30px solid #d4d3d300;
+    border-right: 30px solid #d4d3d3b0;
+    position: absolute;
+    right: -34px;
+    top: -22px;
+}
+
+
+/* --Modal Body -> modifier column */
+.modal-modifier-col {
+    background: #fafafa;
+    border-left: 1px solid #d4d3d3;
+    text-align: center;
+    /* padding: 14px 0; */
+    font-family: 'Noto Sans', sans-serif;
+}
+
+.modal-modifier-col-header{
+    font-size: 16px;
+    margin-bottom: 30px;
+}
+
+
+.modifier-col-item {
+    margin: 18px 0;
+    cursor: pointer;
+}
+
+.modifier-col-item:hover {
+    color: rgba(0, 0, 0, 0.74);
+}
+
+
+.modal-question-item-answer::before {
+    content: '';
+    font-family:#d4d3d3;
+    width: 10px;
+    height: 10px;
+}
+
+
+
+
+/* Animations */
+@keyframes fadeIn {
+    from {opacity: 0;
+          top: 140%;
+    }
+    to {opacity: 1;
+          top: 50%;    
+    }
+}
+
+@keyframes arrowMove {
+    from {opacity: 1;
+          top: 140%;
+    }
+    to {opacity: 0;
+          top: 50%;    
+    }
+}
+
+
+@keyframes fadeOut {
+    from {opacity: 1;
+          top: 50%;
+    }
+    to {opacity: 0;
+          top: 140%;    
+    }
+}
+
+
+
+
+@keyframes glow {
+    from {box-shadow: 0px 5px 6px -3px #ffffff1f;}
+    to {box-shadow: 0px 5px 6px -5px #ffffff;}
+}
